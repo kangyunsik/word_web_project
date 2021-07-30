@@ -10,15 +10,20 @@ const output = {
 const process = {
     login: (req, res) => {
         console.log(req.body);
-        res.json(verify(req).success);
+        res.json(verify(req));
     }
 };
 
 function verify (req){
     if(req.body.id === "root" && req.body.pw === "password")
-        return {success:true};
+        return {
+            success:true,
+        };
     else
-        return {success:false};
+        return {
+            success:false,
+            msg:"로그인에 실패했습니다.",
+        };
 }
 
 module.exports = {
