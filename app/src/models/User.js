@@ -5,26 +5,25 @@ class User {
         this.body = body;
     }
 
-    login() {
+    async login() {
         const body = this.body;
-        const {id, pw} = UserStorage.getUserInfo(body.id);
+        const {id, pw} = await UserStorage.getUserInfo(body.id);
 
         if (id) {
             if (pw === body.pw) {
                 return {success: true};
             }
-            return {success: false, msg: "비밀번호가 옳바르지 않습니다."};
+            return {success: false, msg: "비밀번호가 올바르지 않습니다."};
         }
         return {success: false, msg: "존재하지 않는 아이디입니다."};
     }
 
-    register(){
-        const body = this.body;
-        const userResponse = UserStorage.save(body);
-        if(userResponse){
-            return {success:true,msg:"회원가입에 성공했습니다."};
-        }
-        return {success:false,msg:"회원가입에 실패했습니다."};
+    async register() {
+        try {
+            return await UserStorage.save(this.body);
+        } catch (err) {
+            return {success: false, msg: err}
+        };
     }
 }
 

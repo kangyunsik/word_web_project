@@ -26,12 +26,10 @@ registerBtn.addEventListener("click", () => {
     })
         .then((res) => res.json())
         .then((res) => {
-            console.log("CASE");
             if (res.success) {
                 location.href = "/login";
             } else {
                 alert(res.msg);
-                location.href = "/register";
             }
         })
         .catch((err) => {
