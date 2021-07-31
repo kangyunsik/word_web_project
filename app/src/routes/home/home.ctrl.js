@@ -1,3 +1,6 @@
+const UserStorage = require("../../models/UserStorage");
+const User = require("../../models/User");
+
 const output = {
     home: (req, res) => {
         res.render("home/index");
@@ -9,22 +12,14 @@ const output = {
 
 const process = {
     login: (req, res) => {
-        console.log(req.body);
-        res.json(verify(req));
+        const user = new User(req.body);
+        const response = user.login();
+        return res.json(response);
+
+        // console.log(req.body);
+        // res.json(verify(req));
     }
 };
-
-function verify (req){
-    if(req.body.id === "root" && req.body.pw === "password")
-        return {
-            success:true,
-        };
-    else
-        return {
-            success:false,
-            msg:"로그인에 실패했습니다.",
-        };
-}
 
 module.exports = {
     output,
