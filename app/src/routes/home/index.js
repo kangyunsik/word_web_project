@@ -10,4 +10,7 @@ router.get("/login", ctrl.output.login);
 
 router.post("/login",ctrl.process.login);
 
+// noinspection JSCheckFunctionSignatures
+router.get("/register",ctrl.output.register);
+
 module.exports = router;

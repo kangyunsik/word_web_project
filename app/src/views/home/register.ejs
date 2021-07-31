@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-">
 
-    <link rel="stylesheet" href="/css/home/login.css">
+    <link rel="stylesheet" href="/css/home/register.css">
 
     <script src="/js/home/login.js" defer></script>
     <title>Document</title>
@@ -22,7 +22,14 @@
             <input id="id" type="text" name="username" placeholder="ID" autocomplete="off">
         </p>
         <p>
+            <input id="name" type="text" name="username" placeholder="NAME" autocomplete="off">
+        </p>
+        <p>
             <input id="password" type="password" name="password" placeholder="PASSWORD"
+                   autocomplete="off">
+        </p>
+        <p>
+            <input id="confirm-password" type="password" name="password" placeholder="CONFIRM PASSWORD"
                    autocomplete="off">
         </p>
         <div style="text-align: center;">
@@ -37,14 +44,14 @@
 
     <div style="text-align: center;" class="message">
         <label>
-            Not Registered?
-            <a href="/register">Create an Account</a>
+            Already Registered?
+            <a href="/login">Login with an Account</a>
         </label>
     </div>
 
     <p class="p-container">
         <br>
-        <input id="loginBtn" type="submit" name="Login" value="Authorize">
+        <input id="confirmBtn" type="submit" name="Login" value="CONFIRM">
     </p>
 </form>
 </body>
