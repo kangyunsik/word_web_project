@@ -51,7 +51,6 @@ body {
 }
 
 .background {
-    background: url('https://myrror.co/etc/419062774_1385132057.jpg');
     background-position: center;
     background-size: cover;
     filter: blur(10px);

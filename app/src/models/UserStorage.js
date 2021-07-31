@@ -27,6 +27,12 @@ class UserStorage{
 
         return userInfo;
     }
+
+    static save(userInfo){
+        // ... save function. for DB, files, ... etc
+
+        return false;
+    }
 }
 
 module.exports = UserStorage;
