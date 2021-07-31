@@ -25,8 +25,9 @@ registerBtn.addEventListener("click", () => {
         body: JSON.stringify(req)
     })
         .then((res) => res.json())
-        .then((res) => {
-            if (res.success) {
+        .then(async (res) => {
+            console.log(res.success);
+            if (await res.success) {
                 location.href = "/login";
             } else {
                 alert(res.msg);
